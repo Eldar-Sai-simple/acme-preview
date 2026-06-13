@@ -1383,8 +1383,34 @@ textarea {
   }
 
   .hero {
-    min-height: 92vh;
-    padding: 112px 18px 160px;
+    min-height: 100svh;
+    align-items: start;
+    padding: 92px 18px 38px;
+  }
+
+  .hero-content {
+    padding-top: 4px;
+  }
+
+  h1 {
+    margin-bottom: 14px;
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: 0.94;
+  }
+
+  .hero-copy {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .hero-actions {
+    gap: 8px;
+  }
+
+  .primary-action,
+  .secondary-action {
+    min-height: 46px;
   }
 
   .hero-overlay {
@@ -1394,30 +1420,25 @@ textarea {
   }
 
   .hero-proof {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    width: min(100%, 360px);
-    margin-top: 22px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+    margin-top: 14px;
   }
 
   .hero-proof span {
     min-height: 58px;
+    font-size: 10px;
+    line-height: 1.15;
+    padding: 8px 6px;
+  }
+
+  .hero-proof strong {
+    font-size: 21px;
   }
 
   .hero-rail {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: calc(100% - 32px);
-    bottom: 18px;
-  }
-
-  .hero-rail a {
-    min-height: 46px;
-    border-bottom: 1px solid rgba(20, 70, 58, 0.1);
-    font-size: 12px;
-  }
-
-  .hero-rail a:nth-child(even) {
-    border-right: 0;
+    display: none;
   }
 
   .scroll-hint {
@@ -1467,17 +1488,18 @@ textarea {
   }
 
   .living-backdrop {
-    position: fixed;
+    position: absolute;
     inset: 0;
-    height: auto;
+    height: 100%;
     margin-bottom: 0;
-    opacity: 0.66;
+    opacity: 0.5;
     overflow: hidden;
   }
 
   .bio-orbit {
-    width: 160px;
-    height: 160px;
+    width: 132px;
+    height: 132px;
+    opacity: 0.32;
   }
 
   .tank-ghost {
@@ -1576,7 +1598,7 @@ textarea {
 
 @media (max-width: 560px) {
   h1 {
-    font-size: 52px;
+    font-size: clamp(40px, 11vw, 48px);
   }
 
   .hero-actions {
