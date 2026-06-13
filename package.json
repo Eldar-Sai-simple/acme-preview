@@ -1,0 +1,11 @@
+{
+  "name": "acme-bio-engineering-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ACME Bio Engineering scroll-driven website prototype.",
+  "dependencies": {
+    "motion": "^12.40.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  }
+}
