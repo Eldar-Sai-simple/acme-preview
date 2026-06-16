@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useRef, useState } from "../assets/vendor/react.mjs";
-import { createRoot } from "../assets/vendor/react-dom-client.mjs";
-import { motion } from "../assets/vendor/motion-react.mjs";
+import React, { useEffect, useMemo, useRef, useState } from "../assets/vendor/react.js";
+import { createRoot } from "../assets/vendor/react-dom-client.js";
+import { motion } from "../assets/vendor/motion-react.js";
 
 const h = React.createElement;
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
