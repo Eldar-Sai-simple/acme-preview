@@ -18,14 +18,14 @@ http://localhost:4173/
 
 ## Deploy Preview
 
-This prototype is currently a static site:
+This prototype is currently a self-contained static site:
 
 - `index.html`
 - `styles.css`
 - `src/main.js`
 - `assets/`
 
-It can be deployed to Vercel, Netlify, or Cloudflare Pages as a static project.
+It can be deployed to Vercel, Netlify, Cloudflare Pages, Alibaba Cloud Hong Kong, Tencent Cloud Hong Kong, or any simple static hosting.
 
 ### Vercel
 
@@ -43,5 +43,6 @@ It can be deployed to Vercel, Netlify, or Cloudflare Pages as a static project.
 
 ## Notes
 
-The prototype uses React and Motion through browser ESM imports for fast previewing. For a production handoff, migrate to a Vite or Next.js build.
+React, React DOM, Scheduler and Motion are vendored under `assets/vendor/`, so the browser does not need to load JavaScript from an external CDN at runtime. This makes the preview more suitable for China-facing review links.
 
+For mainland China production hosting, use an ICP-compliant mainland setup. For a fast client preview without ICP, host this static folder in Hong Kong and avoid adding blocked third-party scripts, fonts, analytics or embeds.
