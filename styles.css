@@ -121,6 +121,31 @@ nav a:hover {
   color: white;
 }
 
+.language-switch {
+  display: inline-flex;
+  overflow: hidden;
+  margin-left: 6px;
+  border: 1px solid rgba(20, 70, 58, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.language-switch button {
+  min-height: 38px;
+  border-radius: 0;
+  background: transparent;
+  color: #314440;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 850;
+  padding: 0 10px;
+}
+
+.language-switch button.is-active {
+  background: #153c33;
+  color: white;
+}
+
 .hero {
   position: relative;
   min-height: 96vh;
@@ -175,6 +200,15 @@ h1 {
   color: #10201d;
   font-size: clamp(54px, 8vw, 104px);
   line-height: 0.92;
+}
+
+html[lang="zh-CN"] h1 {
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 1.04;
+}
+
+html[lang="zh-CN"] .hero-copy {
+  letter-spacing: 0;
 }
 
 .hero-copy {
@@ -1382,6 +1416,15 @@ textarea {
     display: none;
   }
 
+  .language-switch {
+    margin-left: 2px;
+  }
+
+  .language-switch button {
+    min-height: 40px;
+    padding: 0 9px;
+  }
+
   .hero {
     min-height: 100svh;
     align-items: start;
@@ -1396,6 +1439,11 @@ textarea {
     margin-bottom: 14px;
     font-size: clamp(42px, 12vw, 58px);
     line-height: 0.94;
+  }
+
+  html[lang="zh-CN"] h1 {
+    font-size: clamp(40px, 11vw, 52px);
+    line-height: 1.02;
   }
 
   .hero-copy {
@@ -1601,6 +1649,10 @@ textarea {
     font-size: clamp(40px, 11vw, 48px);
   }
 
+  html[lang="zh-CN"] h1 {
+    font-size: clamp(36px, 10vw, 44px);
+  }
+
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
@@ -1609,6 +1661,10 @@ textarea {
   .primary-action,
   .secondary-action {
     width: 100%;
+  }
+
+  .nav-cta {
+    padding: 11px 10px;
   }
 
   .story-card,

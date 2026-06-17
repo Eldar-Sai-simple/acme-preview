@@ -181,7 +181,340 @@ const productFamilies = [
   },
 ];
 
-function Header() {
+const enContent = {
+  languageName: "English",
+  nav: {
+    brandSubtitle: "Shandong Acme Bio-engineering",
+    market: "Market",
+    engineering: "Engineering",
+    products: "Products",
+    contact: "Contact",
+  },
+  hero: {
+    eyebrow: "Deep grain processing / biotech engineering",
+    title: "Biotechnology for the next era of grain processing",
+    copy:
+      "ACME combines mature industrialization with modern biotechnology: from raw material strategy and industrial strains to fermentation plants, purification, automation and commissioning.",
+    primary: "Explore capabilities",
+    secondary: "Product map",
+    imageAlt: "Bright biotechnology laboratory and sustainable biofactory",
+    proof: [
+      ["100+", "proprietary industrial strains"],
+      ["6", "turnkey project stages"],
+      ["500B+", "RMB China fermentation industry scale"],
+    ],
+    rail: ["Turnkey engineering", "Technology route", "Product universe", "Project assessment"],
+  },
+  storyCards,
+  concepts,
+  processSteps,
+  technologyBlocks,
+  turnkeySteps,
+  contact: {
+    label: "05 / Partnership",
+    title: "Launch deep grain processing without a long trial-and-error cycle.",
+    copy:
+      "ACME proposes customized turnkey solutions: technology, equipment, production process, training, service and adaptation to local raw materials.",
+    name: "Name",
+    namePlaceholder: "Your name",
+    projectType: "Project type",
+    options: [
+      "Integrated deep grain processing complex",
+      "Organic acid plant",
+      "Amino acid plant",
+      "Starch sugars / polyols",
+      "Automation or modernization",
+    ],
+    message: "Message",
+    messagePlaceholder: "Raw material, target product, capacity and timeline",
+    submit: "Send inquiry",
+  },
+  process: {
+    label: "Technology route",
+    title: "A complete route from raw grain to high-margin biotechnology products.",
+    copy:
+      "The site now reflects ACME's real presentation: grain preparation, strain cultivation, fermentation, purification, by-product utilization and automated quality control.",
+  },
+  technology: {
+    label: "ACME technical portfolio",
+    title: "Patented and applied technologies behind the engineering offer.",
+  },
+  turnkey: {
+    label: "Turnkey engineering",
+    title: "From project idea to a running bio-based production line.",
+    copy:
+      "For industrial buyers, ACME is strongest when the technology is framed as a delivery system: assessment, process package, equipment, automation, commissioning and lifecycle service.",
+    kpis: [
+      ["6", "project stages"],
+      ["100+", "strain library"],
+      ["360", "service model"],
+    ],
+    tabLabel: "Turnkey project stages",
+    stagePrefix: "Stage",
+    cta: "Request project assessment",
+  },
+  productFamilies,
+  productAtlas: {
+    label: "Product universe",
+    title: "The product map expands far beyond one plant or one molecule.",
+    copy:
+      "From wheat and corn streams, ACME's roadmap reaches starch, glucose, acids, amino acids, vitamins, microbial polysaccharides, enzymes, feed products and pharmaceutical intermediates.",
+    tabLabel: "Product families",
+    flowLabels: ["Feedstock", "Processing route", "Products", "By-product value"],
+    selected: "Selected route",
+  },
+};
+
+const zhContent = {
+  languageName: "中文",
+  nav: {
+    brandSubtitle: "山东艾克姆生物工程",
+    market: "市场",
+    engineering: "工程能力",
+    products: "产品体系",
+    contact: "联系",
+  },
+  hero: {
+    eyebrow: "粮食深加工 / 生物工程",
+    title: "面向粮食深加工新时代的生物技术",
+    copy:
+      "ACME 将成熟的工业化经验与现代生物技术结合，从原料路线、工业菌种，到发酵工厂、分离纯化、自动化控制和投产调试，提供完整工程方案。",
+    primary: "了解核心能力",
+    secondary: "查看产品图谱",
+    imageAlt: "明亮的生物技术实验室与可持续生物工厂",
+    proof: [
+      ["100+", "自有工业菌种"],
+      ["6", "交钥匙项目阶段"],
+      ["500B+", "中国发酵产业规模"],
+    ],
+    rail: ["交钥匙工程", "技术路线", "产品体系", "项目评估"],
+  },
+  storyCards: [
+    {
+      id: "solutions",
+      side: "left",
+      step: 0.12,
+      label: "01 / 市场",
+      title: "将粮食资源转化为高附加值生物技术产品。",
+      copy:
+        "ACME 将粮食深加工视为产业升级路径：小麦、玉米和大麦可延伸为有机酸、氨基酸、淀粉糖、维生素、酶制剂、饲料蛋白和先进生物基原料。",
+      chips: ["1.249亿吨粮食", "8240万吨小麦", "1325万吨玉米", "15-20%深加工"],
+    },
+    {
+      id: "process",
+      side: "right",
+      step: 0.32,
+      label: "02 / 工程",
+      title: "从工业菌种到投产运行的完整生产线。",
+      copy:
+        "公司将定向育种、发酵转化、副产物利用、分离纯化、自动化控制和质量管理整合为一个可落地的工程系统。",
+      metrics: [
+        ["菌种", "100+自有工业菌种"],
+        ["工艺", "发酵、萃取、分离、纯化"],
+        ["交付", "设备、开车、培训、服务"],
+      ],
+    },
+    {
+      side: "left compact",
+      step: 0.52,
+      label: "03 / 产品",
+      title: "产品体系不止有机酸和氨基酸。",
+      copy:
+        "产品路线从淀粉和葡萄糖继续延伸到糖醇、维生素、微生物多糖、酶制剂、饲料产品、健康原料和医药中间体。",
+    },
+    {
+      id: "impact",
+      side: "right",
+      step: 0.72,
+      label: "04 / 合作",
+      title: "降低新建深加工项目试错成本。",
+      copy:
+        "ACME 将自身定位为交钥匙合作伙伴：以中国成熟工业经验为基础，适配当地粮食品种，覆盖技术、设备、投产和售后服务全链条。",
+      stats: [
+        ["500B+", "中国发酵产业规模"],
+        ["2000+", "产业链大型企业"],
+        ["360", "全流程工艺与服务覆盖"],
+      ],
+    },
+  ],
+  concepts: [
+    ["left", "concept-organic", 0.18, "01", "有机酸", "柠檬酸、乳酸、衣康酸、丁二酸、苹果酸、葡萄糖酸"],
+    ["right", "concept-amino", 0.34, "02", "氨基酸", "赖氨酸、苏氨酸、色氨酸、缬氨酸、异亮氨酸"],
+    ["left", "concept-starch", 0.52, "03", "淀粉糖", "葡萄糖、果葡糖浆、海藻糖和糖醇"],
+    ["right", "concept-automation", 0.69, "04", "自动化", "发酵罐、分离纯化、过程监测和实验室控制"],
+    ["top", "concept-green", 0.86, "05", "绿色工厂", "节能、热回收和低排放深加工"],
+  ].map(([side, className, step, index, title, copy]) => ({ side, className, step, index, title, copy })),
+  processSteps: [
+    ["原料", "小麦、玉米、大麦、糖蜜、木薯、甜高粱、秸秆"],
+    ["预处理", "清理、粉碎、A/B淀粉分离、谷朊粉和副产物组分"],
+    ["发酵", "黑曲霉、棒状杆菌、大肠杆菌及专用工业菌种"],
+    ["纯化", "分离、萃取、结晶和质量控制"],
+    ["产品", "有机酸、氨基酸、糖类、维生素、酶制剂、饲料和医药中间体"],
+  ],
+  technologyBlocks: [
+    ["菌种库", "100多个自有高性能工业菌种，可适配不同原料和不同目标产品。"],
+    ["淀粉发酵", "小麦A淀粉、A+B淀粉及B淀粉路线，可用于柠檬酸、黄原胶、酵母和结晶葡萄糖。"],
+    ["连续工艺", "连续黑曲霉培养和连续乳酸发酵技术，提升运行稳定性和产能效率。"],
+    ["非粮原料", "甜菜、糖蜜、甘蔗、木薯、甜高粱、秸秆等多种碳源路线。"],
+    ["节能减排", "热回收、消泡控制、低碳玉米糖技术和低排放生产流程。"],
+    ["柔性产线", "一条产线可适配多产品生产，并强化副产物综合利用和价值提升。"],
+  ],
+  turnkeySteps: [
+    {
+      title: "项目评估",
+      label: "01",
+      output: "形成清晰的技术与商业基础。",
+      detail: "在确定工艺路线前，评估原料条件、目标产品、场地限制、公用工程、市场需求和投资逻辑。",
+      tags: ["原料", "产能", "市场匹配"],
+    },
+    {
+      title: "工艺包",
+      label: "02",
+      output: "匹配选定原料的技术路线。",
+      detail: "ACME 定义菌种策略、发酵逻辑、转化步骤、纯化流程、副产物处理和能量回收方案。",
+      tags: ["菌种", "发酵", "纯化"],
+    },
+    {
+      title: "设备与布局",
+      label: "03",
+      output: "可进入采购和建设阶段的工厂配置。",
+      detail: "围绕产能、卫生和维护要求配置发酵罐、分离系统、结晶、干燥、公用工程、仓储和生产区域。",
+      tags: ["设备", "布局", "公用工程"],
+    },
+    {
+      title: "自动化与质控",
+      label: "04",
+      output: "稳定生产、参数可控、过程可追溯。",
+      detail: "整合仪表、过程控制、在线监测、实验室质控和操作配方，保持收率和产品质量稳定。",
+      tags: ["控制", "监测", "质量"],
+    },
+    {
+      title: "投产调试",
+      label: "05",
+      output: "完成运行验证并培训操作团队。",
+      detail: "通过安装指导、冷态与热态调试、试生产、问题排查和操作培训，将产线推进到稳定生产。",
+      tags: ["开车", "培训", "性能验证"],
+    },
+    {
+      title: "生命周期服务",
+      label: "06",
+      output: "投产后的长期优化。",
+      detail: "售后支持、工艺升级、能耗优化、产品扩展和多产品产线调整，帮助资产保持竞争力。",
+      tags: ["服务", "升级", "优化"],
+    },
+  ],
+  contact: {
+    label: "05 / 合作",
+    title: "减少漫长试错周期，启动粮食深加工项目。",
+    copy: "ACME 提供定制化交钥匙方案：技术、设备、生产工艺、培训、服务，以及对当地原料的适配。",
+    name: "姓名",
+    namePlaceholder: "请输入姓名",
+    projectType: "项目类型",
+    options: ["综合粮食深加工园区", "有机酸工厂", "氨基酸工厂", "淀粉糖 / 糖醇", "自动化或技改"],
+    message: "项目说明",
+    messagePlaceholder: "原料、目标产品、产能和时间计划",
+    submit: "发送咨询",
+  },
+  process: {
+    label: "技术路线",
+    title: "从原粮到高附加值生物技术产品的完整路径。",
+    copy:
+      "页面呈现 ACME 真实业务能力：粮食预处理、菌种培养、发酵、纯化、副产物利用和自动化质量控制。",
+  },
+  technology: {
+    label: "ACME 技术组合",
+    title: "支撑工程交付的专利与应用技术。",
+  },
+  turnkey: {
+    label: "交钥匙工程",
+    title: "从项目想法到投产运行的生物基生产线。",
+    copy: "面向工业客户，ACME 的优势在于将技术转化为交付体系：评估、工艺包、设备、自动化、调试和全生命周期服务。",
+    kpis: [
+      ["6", "项目阶段"],
+      ["100+", "菌种库"],
+      ["360", "服务模式"],
+    ],
+    tabLabel: "交钥匙项目阶段",
+    stagePrefix: "阶段",
+    cta: "申请项目评估",
+  },
+  productFamilies: [
+    {
+      key: "starch",
+      title: "淀粉与变性淀粉",
+      feedstock: ["小麦", "玉米"],
+      route: ["清理", "粉碎", "A/B淀粉分离", "改性"],
+      value: "服务食品、造纸、发酵和下游转化的基础平台。",
+      byproducts: ["麸皮", "谷朊粉", "玉米胚芽", "纤维浆"],
+      items: ["A/B淀粉", "糊精", "氧化淀粉", "交联淀粉", "多孔淀粉", "抗性淀粉"],
+    },
+    {
+      key: "sugars",
+      title: "淀粉糖与糖醇",
+      feedstock: ["小麦淀粉", "玉米淀粉"],
+      route: ["淀粉乳", "糖化", "葡萄糖", "氢化 / 异构化"],
+      value: "面向发酵、甜味剂和糖醇产品的柔性糖平台。",
+      byproducts: ["蛋白粉", "玉米油", "胚芽粕"],
+      items: ["葡萄糖", "果葡糖浆", "海藻糖", "山梨醇", "甘露醇", "麦芽糖醇", "赤藓糖醇", "木糖醇"],
+    },
+    {
+      key: "amino",
+      title: "氨基酸",
+      feedstock: ["葡萄糖", "玉米浆"],
+      route: ["菌种培养", "发酵", "分离", "结晶"],
+      value: "以葡萄糖发酵为基础，生产饲料级和食品级氨基酸。",
+      byproducts: ["饲料酵母", "蛋白饲料", "发酵残渣"],
+      items: ["L-赖氨酸", "苏氨酸", "色氨酸", "谷氨酸", "精氨酸", "缬氨酸", "亮氨酸", "异亮氨酸"],
+    },
+    {
+      key: "acids",
+      title: "有机酸",
+      feedstock: ["葡萄糖", "A/B淀粉", "糖蜜"],
+      route: ["菌种库", "好氧发酵", "萃取", "纯化"],
+      value: "适用于大宗有机酸和特色生物基分子的工业化路线。",
+      byproducts: ["减石膏路线", "热回收", "工艺冷凝水回用"],
+      items: ["乳酸", "柠檬酸", "衣康酸", "丁二酸", "苹果酸", "葡萄糖酸"],
+    },
+    {
+      key: "bioactives",
+      title: "维生素与活性成分",
+      feedstock: ["葡萄糖", "专用碳源"],
+      route: ["精准菌种", "受控发酵", "精制", "干燥"],
+      value: "面向营养、健康产品和特色市场的高价值原料。",
+      byproducts: ["菌体再利用", "母液回收"],
+      items: ["维生素C", "B12", "B2", "烟酰胺", "GABA", "L-茶氨酸", "辅酶Q10", "β-葡聚糖"],
+    },
+    {
+      key: "specialty",
+      title: "多糖、酶制剂与原料药",
+      feedstock: ["葡萄糖", "专用培养基"],
+      route: ["生物转化", "酶生产", "膜分离", "高纯精制"],
+      value: "用于胶体、酶制剂、医药中间体和原料药产品的特色路线。",
+      byproducts: ["细胞生物质", "盐分回收", "水回用物流"],
+      items: ["黄原胶", "普鲁兰多糖", "结冷胶", "透明质酸", "淀粉酶", "糖化酶", "硫辛酸", "左旋多巴"],
+    },
+  ],
+  productAtlas: {
+    label: "产品体系",
+    title: "产品图谱远不止一座工厂或一种分子。",
+    copy:
+      "从小麦和玉米组分出发，ACME 的路线可延伸至淀粉、葡萄糖、有机酸、氨基酸、维生素、微生物多糖、酶制剂、饲料产品和医药中间体。",
+    tabLabel: "产品族",
+    flowLabels: ["原料", "工艺路线", "产品", "副产物价值"],
+    selected: "当前路线",
+  },
+};
+
+const languages = { en: enContent, zh: zhContent };
+const getInitialLanguage = () => {
+  try {
+    return localStorage.getItem("acme-language") === "zh" ? "zh" : "en";
+  } catch {
+    return "en";
+  }
+};
+
+function Header({ content, language, onLanguageChange }) {
   return h(
     "header",
     { className: "site-header", "aria-label": "Main navigation" },
@@ -189,27 +522,51 @@ function Header() {
       "a",
       { className: "brand", href: "#top", "aria-label": "ACME Bio Engineering home" },
       h("img", { className: "brand-logo", src: "assets/acme-logo-mark.png", alt: "" }),
-      h("span", null, h("strong", null, "ACME"), h("small", null, "Shandong Acme Bio-engineering")),
+      h("span", null, h("strong", null, "ACME"), h("small", null, content.nav.brandSubtitle)),
     ),
     h(
       "nav",
       null,
-      h("a", { href: "#solutions" }, "Market"),
-      h("a", { href: "#process" }, "Engineering"),
-      h("a", { href: "#products" }, "Products"),
-      h("a", { className: "nav-cta", href: "#contact" }, "Contact"),
+      h("a", { href: "#solutions" }, content.nav.market),
+      h("a", { href: "#process" }, content.nav.engineering),
+      h("a", { href: "#products" }, content.nav.products),
+      h("a", { className: "nav-cta", href: "#contact" }, content.nav.contact),
+      h(
+        "div",
+        { className: "language-switch", role: "group", "aria-label": "Language selector" },
+        h(
+          "button",
+          {
+            type: "button",
+            className: language === "en" ? "is-active" : "",
+            onClick: () => onLanguageChange("en"),
+            "aria-pressed": language === "en",
+          },
+          "EN",
+        ),
+        h(
+          "button",
+          {
+            type: "button",
+            className: language === "zh" ? "is-active" : "",
+            onClick: () => onLanguageChange("zh"),
+            "aria-pressed": language === "zh",
+          },
+          "中文",
+        ),
+      ),
     ),
   );
 }
 
-function Hero() {
+function Hero({ content }) {
   return h(
     "section",
     { className: "hero", "aria-label": "ACME Bio Engineering introduction" },
     h("img", {
       className: "hero-image",
       src: "assets/biofactory-hero.png",
-      alt: "Bright biotechnology laboratory and sustainable biofactory",
+      alt: content.hero.imageAlt,
     }),
     h("div", { className: "hero-overlay" }),
     h(
@@ -220,18 +577,14 @@ function Hero() {
         animate: { opacity: 1, y: 0 },
         transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
       },
-      h("p", { className: "eyebrow" }, "Deep grain processing / biotech engineering"),
-      h("h1", null, "Biotechnology for the next era of grain processing"),
-      h(
-        "p",
-        { className: "hero-copy" },
-        "ACME combines mature industrialization with modern biotechnology: from raw material strategy and industrial strains to fermentation plants, purification, automation and commissioning.",
-      ),
+      h("p", { className: "eyebrow" }, content.hero.eyebrow),
+      h("h1", null, content.hero.title),
+      h("p", { className: "hero-copy" }, content.hero.copy),
       h(
         "div",
         { className: "hero-actions" },
-        h("a", { className: "primary-action", href: "#growth" }, "Explore capabilities"),
-        h("a", { className: "secondary-action", href: "#products" }, "Product map"),
+        h("a", { className: "primary-action", href: "#growth" }, content.hero.primary),
+        h("a", { className: "secondary-action", href: "#products" }, content.hero.secondary),
       ),
       h(
         motion.div,
@@ -241,11 +594,7 @@ function Hero() {
           animate: { opacity: 1, y: 0 },
           transition: { delay: 0.25, duration: 0.65, ease: [0.16, 1, 0.3, 1] },
         },
-        [
-          ["100+", "proprietary industrial strains"],
-          ["6", "turnkey project stages"],
-          ["500B+", "RMB China fermentation industry scale"],
-        ].map(([value, label]) =>
+        content.hero.proof.map(([value, label]) =>
           h("span", { key: label }, h("strong", null, value), label),
         ),
       ),
@@ -258,10 +607,10 @@ function Hero() {
         animate: { opacity: 1, y: 0 },
         transition: { delay: 0.42, duration: 0.55 },
       },
-      h("a", { href: "#turnkey" }, "Turnkey engineering"),
-      h("a", { href: "#technologies" }, "Technology route"),
-      h("a", { href: "#products" }, "Product universe"),
-      h("a", { href: "#contact" }, "Project assessment"),
+      h("a", { href: "#turnkey" }, content.hero.rail[0]),
+      h("a", { href: "#technologies" }, content.hero.rail[1]),
+      h("a", { href: "#products" }, content.hero.rail[2]),
+      h("a", { href: "#contact" }, content.hero.rail[3]),
     ),
     h("div", { className: "scroll-hint", "aria-hidden": "true" }, h("span")),
   );
@@ -329,7 +678,7 @@ function Stem({ progress }) {
   );
 }
 
-function ConceptLeaves({ progress }) {
+function ConceptLeaves({ progress, concepts }) {
   return h(
     "div",
     { className: "concept-leaves", "aria-label": "ACME core capabilities" },
@@ -374,7 +723,7 @@ function StoryCard({ card, progress }) {
   );
 }
 
-function ContactPanel({ progress }) {
+function ContactPanel({ progress, content }) {
   return h(
     motion.article,
     {
@@ -387,35 +736,31 @@ function ContactPanel({ progress }) {
     h(
       "div",
       null,
-      h("span", { className: "node-label" }, "05 / Partnership"),
-      h("h2", null, "Launch deep grain processing without a long trial-and-error cycle."),
-      h("p", null, "ACME proposes customized turnkey solutions: technology, equipment, production process, training, service and adaptation to local raw materials."),
+      h("span", { className: "node-label" }, content.contact.label),
+      h("h2", null, content.contact.title),
+      h("p", null, content.contact.copy),
     ),
     h(
       "form",
       null,
-      h("label", null, "Name", h("input", { type: "text", placeholder: "Your name" })),
+      h("label", null, content.contact.name, h("input", { type: "text", placeholder: content.contact.namePlaceholder })),
       h(
         "label",
         null,
-        "Project type",
+        content.contact.projectType,
         h(
           "select",
           null,
-          h("option", null, "Integrated deep grain processing complex"),
-          h("option", null, "Organic acid plant"),
-          h("option", null, "Amino acid plant"),
-          h("option", null, "Starch sugars / polyols"),
-          h("option", null, "Automation or modernization"),
+          content.contact.options.map((option) => h("option", { key: option }, option)),
         ),
       ),
-      h("label", null, "Message", h("textarea", { placeholder: "Raw material, target product, capacity and timeline" })),
-      h("button", { type: "button" }, "Send inquiry"),
+      h("label", null, content.contact.message, h("textarea", { placeholder: content.contact.messagePlaceholder })),
+      h("button", { type: "button" }, content.contact.submit),
     ),
   );
 }
 
-function GrowthStage() {
+function GrowthStage({ content }) {
   const stageRef = useRef(null);
   const [progress, setProgress] = useState(0);
 
@@ -471,27 +816,27 @@ function GrowthStage() {
     },
     h(LivingBackdrop),
     h(Stem, { progress }),
-    h(ConceptLeaves, { progress }),
-    storyCards.map((card) => h(StoryCard, { key: card.label, card, progress })),
-    h(ContactPanel, { progress }),
+    h(ConceptLeaves, { progress, concepts: content.concepts }),
+    content.storyCards.map((card) => h(StoryCard, { key: card.label, card, progress })),
+    h(ContactPanel, { progress, content }),
   );
 }
 
-function ProcessMap() {
+function ProcessMap({ content }) {
   return h(
     "section",
     { className: "process-map", id: "technologies" },
     h(
       "div",
       { className: "section-heading" },
-      h("span", { className: "node-label" }, "Technology route"),
-      h("h2", null, "A complete route from raw grain to high-margin biotechnology products."),
-      h("p", null, "The site now reflects ACME's real presentation: grain preparation, strain cultivation, fermentation, purification, by-product utilization and automated quality control."),
+      h("span", { className: "node-label" }, content.process.label),
+      h("h2", null, content.process.title),
+      h("p", null, content.process.copy),
     ),
     h(
       "div",
       { className: "route-line" },
-      processSteps.map(([title, copy], index) =>
+      content.processSteps.map(([title, copy], index) =>
         h(
           motion.div,
           {
@@ -511,20 +856,20 @@ function ProcessMap() {
   );
 }
 
-function TechnologyPortfolio() {
+function TechnologyPortfolio({ content }) {
   return h(
     "section",
     { className: "technology-portfolio" },
     h(
       "div",
       { className: "section-heading narrow" },
-      h("span", { className: "node-label" }, "ACME technical portfolio"),
-      h("h2", null, "Patented and applied technologies behind the engineering offer."),
+      h("span", { className: "node-label" }, content.technology.label),
+      h("h2", null, content.technology.title),
     ),
     h(
       "div",
       { className: "technology-grid" },
-      technologyBlocks.map(([title, copy], index) =>
+      content.technologyBlocks.map(([title, copy], index) =>
         h(
           motion.article,
           {
@@ -544,9 +889,9 @@ function TechnologyPortfolio() {
   );
 }
 
-function TurnkeyEngineering() {
+function TurnkeyEngineering({ content }) {
   const [activeIndex, setActiveIndex] = useState(1);
-  const active = turnkeySteps[activeIndex];
+  const active = content.turnkeySteps[activeIndex] || content.turnkeySteps[0];
 
   return h(
     "section",
@@ -557,19 +902,13 @@ function TurnkeyEngineering() {
       h(
         "div",
         { className: "turnkey-intro" },
-        h("span", { className: "node-label" }, "Turnkey engineering"),
-        h("h2", null, "From project idea to a running bio-based production line."),
-        h(
-          "p",
-          null,
-          "For industrial buyers, ACME is strongest when the technology is framed as a delivery system: assessment, process package, equipment, automation, commissioning and lifecycle service.",
-        ),
+        h("span", { className: "node-label" }, content.turnkey.label),
+        h("h2", null, content.turnkey.title),
+        h("p", null, content.turnkey.copy),
         h(
           "div",
           { className: "turnkey-kpis" },
-          h("span", null, h("strong", null, "6"), " project stages"),
-          h("span", null, h("strong", null, "100+"), " strain library"),
-          h("span", null, h("strong", null, "360"), " service model"),
+          content.turnkey.kpis.map(([value, label]) => h("span", { key: label }, h("strong", null, value), ` ${label}`)),
         ),
       ),
       h(
@@ -577,8 +916,8 @@ function TurnkeyEngineering() {
         { className: "turnkey-board" },
         h(
           "div",
-          { className: "turnkey-timeline", role: "tablist", "aria-label": "Turnkey project stages" },
-          turnkeySteps.map((step, index) =>
+          { className: "turnkey-timeline", role: "tablist", "aria-label": content.turnkey.tabLabel },
+          content.turnkeySteps.map((step, index) =>
             h(
               "button",
               {
@@ -605,25 +944,28 @@ function TurnkeyEngineering() {
             animate: { opacity: 1, y: 0 },
             transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] },
           },
-          h("span", { className: "node-label" }, `Stage ${active.label}`),
+          h("span", { className: "node-label" }, `${content.turnkey.stagePrefix} ${active.label}`),
           h("h3", null, active.title),
           h("p", null, active.detail),
           h("div", { className: "turnkey-tags" }, active.tags.map((tag) => h("span", { key: tag }, tag))),
-          h("a", { className: "turnkey-cta", href: "#contact" }, "Request project assessment"),
+          h("a", { className: "turnkey-cta", href: "#contact" }, content.turnkey.cta),
         ),
       ),
     ),
   );
 }
 
-function ProductAtlas() {
-  const [activeKey, setActiveKey] = useState(productFamilies[1].key);
-  const active = productFamilies.find((family) => family.key === activeKey) || productFamilies[0];
+function ProductAtlas({ content }) {
+  const [activeKey, setActiveKey] = useState(content.productFamilies[1].key);
+  useEffect(() => {
+    setActiveKey((key) => (content.productFamilies.some((family) => family.key === key) ? key : content.productFamilies[1].key));
+  }, [content]);
+  const active = content.productFamilies.find((family) => family.key === activeKey) || content.productFamilies[0];
   const flowColumns = [
-    ["Feedstock", active.feedstock],
-    ["Processing route", active.route],
-    ["Products", active.items.slice(0, 6)],
-    ["By-product value", active.byproducts],
+    [content.productAtlas.flowLabels[0], active.feedstock],
+    [content.productAtlas.flowLabels[1], active.route],
+    [content.productAtlas.flowLabels[2], active.items.slice(0, 6)],
+    [content.productAtlas.flowLabels[3], active.byproducts],
   ];
 
   return h(
@@ -632,17 +974,17 @@ function ProductAtlas() {
     h(
       "div",
       { className: "section-heading" },
-      h("span", { className: "node-label" }, "Product universe"),
-      h("h2", null, "The product map expands far beyond one plant or one molecule."),
-      h("p", null, "From wheat and corn streams, ACME's roadmap reaches starch, glucose, acids, amino acids, vitamins, microbial polysaccharides, enzymes, feed products and pharmaceutical intermediates."),
+      h("span", { className: "node-label" }, content.productAtlas.label),
+      h("h2", null, content.productAtlas.title),
+      h("p", null, content.productAtlas.copy),
     ),
     h(
       "div",
       { className: "product-map-shell" },
       h(
         "div",
-        { className: "product-tabs", role: "tablist", "aria-label": "Product families" },
-        productFamilies.map((family, index) =>
+        { className: "product-tabs", role: "tablist", "aria-label": content.productAtlas.tabLabel },
+        content.productFamilies.map((family, index) =>
           h(
             "button",
             {
@@ -705,7 +1047,7 @@ function ProductAtlas() {
         h(
           "aside",
           { className: "map-detail" },
-          h("span", { className: "node-label" }, "Selected route"),
+          h("span", { className: "node-label" }, content.productAtlas.selected),
           h("h3", null, active.title),
           h("p", null, active.value),
           h("div", { className: "atlas-tags" }, active.items.map((item) => h("span", { key: item }, item))),
@@ -715,7 +1057,7 @@ function ProductAtlas() {
     h(
       "div",
       { className: "atlas-grid compact-atlas" },
-      productFamilies.map((family, index) =>
+      content.productFamilies.map((family, index) =>
         h(
           motion.article,
           {
@@ -736,11 +1078,32 @@ function ProductAtlas() {
 }
 
 function App() {
+  const [language, setLanguage] = useState(getInitialLanguage);
+  const content = languages[language];
+
+  useEffect(() => {
+    document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+    try {
+      localStorage.setItem("acme-language", language);
+    } catch {
+      // Ignore storage failures in privacy-restricted browsers.
+    }
+  }, [language]);
+
   return h(
     React.Fragment,
     null,
-    h(Header),
-    h("main", { id: "top" }, h(Hero), h(GrowthStage), h(ProcessMap), h(TechnologyPortfolio), h(TurnkeyEngineering), h(ProductAtlas)),
+    h(Header, { content, language, onLanguageChange: setLanguage }),
+    h(
+      "main",
+      { id: "top" },
+      h(Hero, { content }),
+      h(GrowthStage, { content }),
+      h(ProcessMap, { content }),
+      h(TechnologyPortfolio, { content }),
+      h(TurnkeyEngineering, { content }),
+      h(ProductAtlas, { content }),
+    ),
   );
 }
 
